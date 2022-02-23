@@ -1,1 +1,2 @@
 # Task
+rails API app that has users with the CRUD endpoints (index,show,create,update,delete). each user may have multiple todo_lists. each todo_list has inside it tasks along with the state of this task.
