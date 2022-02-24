@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   post "/user/new/name/:name", to: "users#create"
 
   get "/lists" , to: "lists#index"
-  get "/list/:id" , to: "lists#show"
+  get "/list/:user_id/:id" , to: "lists#show"
   delete "/list/:id", to: "lists#destroy"
-  put "/list/update", to: "lists#update"
-  post "/list/", to: "lists#create"
+  put "/list/update/:id/state/:state", to: "lists#update"
+  post "/list/new/user_id/:user_id/task/:task", to: "lists#create"
 end

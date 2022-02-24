@@ -8,7 +8,7 @@ class ListsController < ApplicationController
     end
 
     def create 
-        @list = List.create(task: params[:name] , state: params[:state])
+        @list = List.create(user_id: params[:user_id] , task: params[:task])
         @list.save
 
     end
