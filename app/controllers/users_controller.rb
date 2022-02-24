@@ -1,12 +1,17 @@
 class UsersController < ApplicationController
+
+    protect_from_forgery with: :null_session,
+    if: Proc.new { |c| c.request.format =~ %r{application/json} }
+
     def index
         @users = User.all 
         render json: @users
     end
 
     def create 
-        @user = User.new(params.require(:name))
+        @user = User.create(name: params[:name])
         @user.save
+
     end
 
     def destroy
@@ -16,7 +21,7 @@ class UsersController < ApplicationController
 
     
     def update
-        @user = User.find(params[:id]).update(params[:name])
+        @user = User.find(params[:id]).update(name: params[:name])
     end
 
     def show

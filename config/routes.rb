@@ -4,13 +4,13 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   get "/" , to: "users#index"
   get "/user/:id" , to: "users#show"
-  delete "/user/:id", to: "users#destroy"
-  post "/user/update", to: "users#update"
-  post "/user/new", to: "users#create"
+  delete "/user/destroy/:id", to: "users#destroy"
+  put "/users/:id/name/:name", to: "users#update"
+  post "/user/new/name/:name", to: "users#create"
 
   get "/lists" , to: "lists#index"
   get "/list/:id" , to: "lists#show"
   delete "/list/:id", to: "lists#destroy"
-  post "/list/update", to: "lists#update"
-  post "/list/new", to: "lists#create"
+  put "/list/update", to: "lists#update"
+  post "/list/", to: "lists#create"
 end
