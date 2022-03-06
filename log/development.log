@@ -5181,3 +5181,1020 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.8ms | Allocations: 5771)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTasks (20220306133346)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "todolist_id" integer NOT NULL, "name" varchar, "state" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5cc49004be"
+FOREIGN KEY ("todolist_id")
+  REFERENCES "todolists" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_tasks_on_todolist_id" ON "tasks" ("todolist_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220306133346"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-03-06 16:17:20 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.0ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.17ms)
+Completed 200 OK in 27ms (Views: 17.4ms | ActiveRecord: 0.6ms | Allocations: 27154)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-06 16:18:45 +0200
+Processing by UsersController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.0ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.8ms)
+Completed 200 OK in 15ms (Views: 11.8ms | ActiveRecord: 1.0ms | Allocations: 12429)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2022-03-06 16:20:01 +0200
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.07ms)
+Completed 200 OK in 7ms (Views: 1.6ms | ActiveRecord: 0.5ms | Allocations: 2005)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-06 16:20:08 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.1ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.61ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.5ms | Allocations: 3074)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-06 16:21:16 +0200
+Processing by UsersController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.65ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.5ms | Allocations: 5418)
+
+
+  
+SyntaxError (/Users/yousseffekry/Downloads/zyda/Task/app/models/todolist.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+  has_many :tasks
+           ^
+):
+  
+app/models/todolist.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/todolist.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/todolist.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:8:in `index'
+Started GET "/" for 127.0.0.1 at 2022-03-06 16:22:17 +0200
+Processing by UsersController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.0ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.65ms)
+Completed 200 OK in 14ms (Views: 11.3ms | ActiveRecord: 1.0ms | Allocations: 12487)
+
+
+Started GET "/lists" for 127.0.0.1 at 2022-03-06 16:22:24 +0200
+Processing by TodolistsController#index as HTML
+  [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists"[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.36ms)
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 1.3ms | Allocations: 7444)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-06 16:22:48 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.1ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.1ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.47ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.4ms | Allocations: 3053)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-06 16:24:11 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.1ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.3ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.75ms)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.6ms | Allocations: 3053)
+
+
+Started GET "/lists" for 127.0.0.1 at 2022-03-06 16:24:19 +0200
+Processing by TodolistsController#index as HTML
+  [1m[36mTodolist Load (0.1ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists"[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.11ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.4ms | Allocations: 2865)
+
+
+Started GET "/lists" for 127.0.0.1 at 2022-03-06 16:26:50 +0200
+Processing by TodolistsController#index as HTML
+  [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists"[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.72ms)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.4ms | Allocations: 2865)
+
+
+Started POST "/task/new/list_id/1/name/project" for ::1 at 2022-03-06 16:26:53 +0200
+Processing by TasksController#create as */*
+  Parameters: {"todolist_id"=>"1", "name"=>"project"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 3280)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'list_id' for Task.):
+  
+app/controllers/tasks_controller.rb:11:in `create'
+Started POST "/task/new/todolist_id/1/name/project" for ::1 at 2022-03-06 16:27:38 +0200
+Processing by TasksController#create as */*
+  Parameters: {"todolist_id"=>"1", "name"=>"project"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTodolist Load (0.3ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTask Create (1.1ms)[0m  [1m[32mINSERT INTO "tasks" ("todolist_id", "name", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["todolist_id", 1], ["name", "project"], ["state", nil], ["created_at", "2022-03-06 14:27:38.896583"], ["updated_at", "2022-03-06 14:27:38.896583"]]
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+No template found for TasksController#create, rendering head :no_content
+Completed 204 No Content in 14ms (ActiveRecord: 2.5ms | Allocations: 11516)
+
+
+Started GET "/lists" for 127.0.0.1 at 2022-03-06 16:27:41 +0200
+Processing by TodolistsController#index as HTML
+  [1m[36mTodolist Load (0.3ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists"[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.77ms)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 1.0ms | Allocations: 9707)
+
+
+Started DELETE "/task/1" for ::1 at 2022-03-06 16:28:34 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:17:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:18:in `destroy'
+  [1m[36mTask Destroy (1.1ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/tasks_controller.rb:18:in `destroy'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:18:in `destroy'
+No template found for TasksController#destroy, rendering head :no_content
+Completed 204 No Content in 8ms (ActiveRecord: 2.1ms | Allocations: 2581)
+
+
+Started GET "/lists" for 127.0.0.1 at 2022-03-06 16:28:37 +0200
+Processing by TodolistsController#index as HTML
+  [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists"[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.9ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.4ms | Allocations: 2865)
+
+
+Started DELETE "/task/new/todolist_id/1/name/project" for ::1 at 2022-03-06 16:28:47 +0200
+  
+ActionController::RoutingError (No route matches [DELETE] "/task/new/todolist_id/1/name/project"):
+  
+Started GET "/lists" for 127.0.0.1 at 2022-03-06 16:28:53 +0200
+Processing by TodolistsController#index as HTML
+  [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists"[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.78ms)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.4ms | Allocations: 2884)
+
+
+Started DELETE "/task/new/todolist_id/1/name/project" for ::1 at 2022-03-06 16:29:17 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [DELETE] "/task/new/todolist_id/1/name/project"):
+  
+Started DELETE "/task/new/todolist_id/1/name/project" for ::1 at 2022-03-06 16:31:08 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [DELETE] "/task/new/todolist_id/1/name/project"):
+  
+Started GET "/lists" for 127.0.0.1 at 2022-03-06 16:31:12 +0200
+Processing by TodolistsController#index as HTML
+  [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists"[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (19.06ms)
+Completed 200 OK in 31ms (Views: 23.2ms | ActiveRecord: 1.2ms | Allocations: 13641)
+
+
+Started DELETE "/task/new/todolist_id/1/name/project" for ::1 at 2022-03-06 16:31:24 +0200
+  
+ActionController::RoutingError (No route matches [DELETE] "/task/new/todolist_id/1/name/project"):
+  
+Started POST "/task/new/todolist_id/1/name/project" for ::1 at 2022-03-06 16:32:22 +0200
+Processing by TasksController#create as */*
+  Parameters: {"todolist_id"=>"1", "name"=>"project"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTodolist Load (0.1ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTask Create (0.8ms)[0m  [1m[32mINSERT INTO "tasks" ("todolist_id", "name", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["todolist_id", 1], ["name", "project"], ["state", nil], ["created_at", "2022-03-06 14:32:22.038722"], ["updated_at", "2022-03-06 14:32:22.038722"]]
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+No template found for TasksController#create, rendering head :no_content
+Completed 204 No Content in 9ms (ActiveRecord: 2.2ms | Allocations: 4975)
+
+
+Started GET "/lists" for 127.0.0.1 at 2022-03-06 16:32:24 +0200
+Processing by TodolistsController#index as HTML
+  [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists"[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.76ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.5ms | Allocations: 3966)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/lists" for 127.0.0.1 at 2022-03-06 16:32:59 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TodolistsController#index as HTML
+  [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists"[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.73ms)
+Completed 200 OK in 26ms (Views: 19.3ms | ActiveRecord: 0.9ms | Allocations: 33486)
+
+
+Started DELETE "/task/2" for ::1 at 2022-03-06 16:33:20 +0200
+Processing by TasksController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:17:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:18:in `destroy'
+  [1m[36mTask Destroy (1.1ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/tasks_controller.rb:18:in `destroy'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:18:in `destroy'
+No template found for TasksController#destroy, rendering head :no_content
+Completed 204 No Content in 9ms (ActiveRecord: 2.4ms | Allocations: 3092)
+
+
+Started GET "/lists" for 127.0.0.1 at 2022-03-06 16:33:23 +0200
+Processing by TodolistsController#index as HTML
+  [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists"[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.92ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.4ms | Allocations: 2884)
+
+
+Started POST "/task/new/todolist_id/1/name/project" for ::1 at 2022-03-06 16:33:30 +0200
+Processing by TasksController#create as */*
+  Parameters: {"todolist_id"=>"1", "name"=>"project"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTask Create (1.6ms)[0m  [1m[32mINSERT INTO "tasks" ("todolist_id", "name", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["todolist_id", 1], ["name", "project"], ["state", nil], ["created_at", "2022-03-06 14:33:30.944413"], ["updated_at", "2022-03-06 14:33:30.944413"]]
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+No template found for TasksController#create, rendering head :no_content
+Completed 204 No Content in 11ms (ActiveRecord: 3.2ms | Allocations: 4503)
+
+
+Started GET "/lists" for 127.0.0.1 at 2022-03-06 16:33:33 +0200
+Processing by TodolistsController#index as HTML
+  [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists"[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.35ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.5ms | Allocations: 3020)
+
+
+Started DELETE "/task/3" for ::1 at 2022-03-06 16:34:33 +0200
+Processing by TasksController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:17:in `destroy'
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:17:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:18:in `destroy'
+  [1m[36mTask Destroy (0.4ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/tasks_controller.rb:18:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:18:in `destroy'
+No template found for TasksController#destroy, rendering head :no_content
+Completed 204 No Content in 8ms (ActiveRecord: 1.7ms | Allocations: 5575)
+
+
+Started GET "/lists" for 127.0.0.1 at 2022-03-06 16:34:35 +0200
+Processing by TodolistsController#index as HTML
+  [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists"[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.48ms)
+Completed 200 OK in 19ms (Views: 12.6ms | ActiveRecord: 0.9ms | Allocations: 11999)
+
+
+Started POST "/task/new/todolist_id/1/name/Project" for ::1 at 2022-03-06 16:35:32 +0200
+Processing by TasksController#create as */*
+  Parameters: {"todolist_id"=>"1", "name"=>"Project"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTask Create (1.2ms)[0m  [1m[32mINSERT INTO "tasks" ("todolist_id", "name", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["todolist_id", 1], ["name", "Project"], ["state", nil], ["created_at", "2022-03-06 14:35:32.841582"], ["updated_at", "2022-03-06 14:35:32.841582"]]
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+No template found for TasksController#create, rendering head :no_content
+Completed 204 No Content in 9ms (ActiveRecord: 2.9ms | Allocations: 3945)
+
+
+Started GET "/lists" for 127.0.0.1 at 2022-03-06 16:35:35 +0200
+Processing by TodolistsController#index as HTML
+  [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists"[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (18.96ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.4ms | Allocations: 6907)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/lists" for 127.0.0.1 at 2022-03-06 16:36:36 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TodolistsController#index as HTML
+  [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists"[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.28ms)
+Completed 200 OK in 26ms (Views: 18.9ms | ActiveRecord: 0.8ms | Allocations: 33487)
+
+
+Started POST "/task/new/todolist_id/1/name/Project1" for ::1 at 2022-03-06 16:36:43 +0200
+Processing by TasksController#create as */*
+  Parameters: {"todolist_id"=>"1", "name"=>"Project1"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTodolist Load (0.1ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTask Create (0.8ms)[0m  [1m[32mINSERT INTO "tasks" ("todolist_id", "name", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["todolist_id", 1], ["name", "Project1"], ["state", nil], ["created_at", "2022-03-06 14:36:43.070525"], ["updated_at", "2022-03-06 14:36:43.070525"]]
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+No template found for TasksController#create, rendering head :no_content
+Completed 204 No Content in 9ms (ActiveRecord: 1.6ms | Allocations: 5027)
+
+
+Started GET "/lists" for 127.0.0.1 at 2022-03-06 16:36:45 +0200
+Processing by TodolistsController#index as HTML
+  [1m[36mTodolist Load (0.3ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists"[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.34ms)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.6ms | Allocations: 3153)
+
+
+Started GET "/lists" for 127.0.0.1 at 2022-03-06 16:37:53 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TodolistsController#index as HTML
+  [1m[36mTodolist Load (0.1ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists"[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.0ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.4ms | Allocations: 3126)
+
+
+Started POST "/task/new/todolist_id/1/name/Project2" for ::1 at 2022-03-06 16:38:00 +0200
+Processing by TasksController#create as */*
+  Parameters: {"todolist_id"=>"1", "name"=>"Project2"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTodolist Load (0.1ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTask Create (0.9ms)[0m  [1m[32mINSERT INTO "tasks" ("todolist_id", "name", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["todolist_id", 1], ["name", "Project2"], ["state", nil], ["created_at", "2022-03-06 14:38:00.079561"], ["updated_at", "2022-03-06 14:38:00.079561"]]
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+No template found for TasksController#create, rendering head :no_content
+Completed 204 No Content in 9ms (ActiveRecord: 2.5ms | Allocations: 2676)
+
+
+Started GET "/lists" for 127.0.0.1 at 2022-03-06 16:38:02 +0200
+Processing by TodolistsController#index as HTML
+  [1m[36mTodolist Load (0.3ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists"[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.47ms)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.6ms | Allocations: 3267)
+
+
+Started POST "/task/new/todolist_id/1/name/Project2/state/Done" for ::1 at 2022-03-06 16:39:25 +0200
+Processing by TasksController#create as */*
+  Parameters: {"todolist_id"=>"1", "name"=>"Project2", "state"=>"Done"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTodolist Load (0.3ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("todolist_id", "name", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["todolist_id", 1], ["name", "Project2"], ["state", "Done"], ["created_at", "2022-03-06 14:39:25.973364"], ["updated_at", "2022-03-06 14:39:25.973364"]]
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+No template found for TasksController#create, rendering head :no_content
+Completed 204 No Content in 12ms (ActiveRecord: 1.8ms | Allocations: 10403)
+
+
+Started GET "/lists" for 127.0.0.1 at 2022-03-06 16:39:28 +0200
+Processing by TodolistsController#index as HTML
+  [1m[36mTodolist Load (0.4ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists"[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.0ms)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 1.5ms | Allocations: 10093)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-06 16:39:40 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.5ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.1ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.74ms)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.8ms | Allocations: 5030)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-06 16:42:29 +0200
+Processing by UsersController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.1ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.65ms)
+Completed 200 OK in 17ms (Views: 13.2ms | ActiveRecord: 0.9ms | Allocations: 13228)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-06 16:44:24 +0200
+Processing by UsersController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "todolists" ON "tasks"."todolist_id" = "todolists"."id" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.0ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "todolists" ON "tasks"."todolist_id" = "todolists"."id" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (37.09ms)
+Completed 200 OK in 45ms (Views: 41.5ms | ActiveRecord: 1.6ms | Allocations: 25918)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-06 16:45:54 +0200
+Processing by UsersController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "todolists" ON "tasks"."todolist_id" = "todolists"."id" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.0ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "todolists" ON "tasks"."todolist_id" = "todolists"."id" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.73ms)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.9ms | Allocations: 21387)
+
+
+Started DELETE "/task/4" for ::1 at 2022-03-06 16:47:02 +0200
+Processing by TasksController#destroy as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:17:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:18:in `destroy'
+  [1m[36mTask Destroy (0.6ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/tasks_controller.rb:18:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:18:in `destroy'
+No template found for TasksController#destroy, rendering head :no_content
+Completed 204 No Content in 5ms (ActiveRecord: 1.4ms | Allocations: 2577)
+
+
+Started DELETE "/task/5" for ::1 at 2022-03-06 16:47:06 +0200
+Processing by TasksController#destroy as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:17:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:18:in `destroy'
+  [1m[36mTask Destroy (0.8ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/tasks_controller.rb:18:in `destroy'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:18:in `destroy'
+No template found for TasksController#destroy, rendering head :no_content
+Completed 204 No Content in 8ms (ActiveRecord: 2.6ms | Allocations: 1911)
+
+
+Started DELETE "/task/6" for ::1 at 2022-03-06 16:47:08 +0200
+Processing by TasksController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:17:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:18:in `destroy'
+  [1m[36mTask Destroy (0.6ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/tasks_controller.rb:18:in `destroy'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:18:in `destroy'
+No template found for TasksController#destroy, rendering head :no_content
+Completed 204 No Content in 6ms (ActiveRecord: 1.4ms | Allocations: 1909)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-06 16:47:11 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "todolists" ON "tasks"."todolist_id" = "todolists"."id" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.1ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "todolists" ON "tasks"."todolist_id" = "todolists"."id" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.57ms)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.9ms | Allocations: 5509)
+
+
+Started GET "/lists" for 127.0.0.1 at 2022-03-06 16:47:26 +0200
+Processing by TodolistsController#index as HTML
+  [1m[36mTodolist Load (0.3ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists"[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.46ms)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.8ms | Allocations: 6166)
+
+
+Started POST "/list/new/user_id/1/name/Personal/description/Home" for ::1 at 2022-03-06 16:50:24 +0200
+Processing by TodolistsController#create as */*
+  Parameters: {"user_id"=>"1", "name"=>"Personal", "description"=>"Home"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/todolists_controller.rb:11:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/todolists_controller.rb:11:in `create'
+  [1m[36mTodolist Create (1.1ms)[0m  [1m[32mINSERT INTO "todolists" ("user_id", "name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["name", "Personal"], ["description", "Home"], ["created_at", "2022-03-06 14:50:24.154874"], ["updated_at", "2022-03-06 14:50:24.154874"]]
+  ↳ app/controllers/todolists_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/todolists_controller.rb:11:in `create'
+No template found for TodolistsController#create, rendering head :no_content
+Completed 204 No Content in 17ms (ActiveRecord: 2.2ms | Allocations: 2904)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-06 16:50:28 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "todolists" ON "tasks"."todolist_id" = "todolists"."id" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.1ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "todolists" ON "tasks"."todolist_id" = "todolists"."id" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (13.41ms)
+Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 0.8ms | Allocations: 5650)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-06 16:52:58 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "todolists" ON "tasks"."todolist_id" = "todolists"."id" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.1ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "todolists" ON "tasks"."todolist_id" = "todolists"."id" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.3ms)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.7ms | Allocations: 5648)
+
+
+Started GET "/lists" for 127.0.0.1 at 2022-03-06 16:53:08 +0200
+Processing by TodolistsController#index as HTML
+  [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists"[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.03ms)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.7ms | Allocations: 5040)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-06 16:54:22 +0200
+Processing by UsersController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "todolists" ON "tasks"."todolist_id" = "todolists"."id" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "todolists" ON "tasks"."todolist_id" = "todolists"."id" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.24ms)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 1.0ms | Allocations: 15784)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-06 17:15:54 +0200
+Processing by UsersController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.3ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "todolists" ON "tasks"."todolist_id" = "todolists"."id" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.0ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "todolists" ON "tasks"."todolist_id" = "todolists"."id" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.02ms)
+Completed 200 OK in 23ms (Views: 19.1ms | ActiveRecord: 0.9ms | Allocations: 20005)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-06 17:17:29 +0200
+Processing by UsersController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.0ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.75ms)
+Completed 200 OK in 13ms (Views: 9.6ms | ActiveRecord: 0.9ms | Allocations: 13401)
+
+
+Started GET "/lists" for 127.0.0.1 at 2022-03-06 17:17:42 +0200
+Processing by TodolistsController#index as HTML
+  [1m[36mTodolist Load (0.3ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists"[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (17.48ms)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 1.6ms | Allocations: 11542)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-06 17:18:29 +0200
+Processing by UsersController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.3ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.0ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.98ms)
+Completed 200 OK in 14ms (Views: 10.6ms | ActiveRecord: 1.0ms | Allocations: 13369)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-06 17:19:52 +0200
+Processing by UsersController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms | Allocations: 5537)
+
+
+  
+SyntaxError (/Users/yousseffekry/Downloads/zyda/Task/app/serializers/user_serializer.rb:3: syntax error, unexpected ':', expecting `end'
+..., include_nested_associations : true
+...                              ^
+):
+  
+app/serializers/user_serializer.rb:3: syntax error, unexpected ':', expecting `end'
+app/serializers/user_serializer.rb:3: syntax error, unexpected ':', expecting `end'
+app/serializers/user_serializer.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/users_controller.rb:8:in `index'
+Started GET "/" for 127.0.0.1 at 2022-03-06 17:21:39 +0200
+Processing by UsersController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.3ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.0ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.66ms)
+Completed 200 OK in 14ms (Views: 10.5ms | ActiveRecord: 0.9ms | Allocations: 13427)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-06 17:21:48 +0200
+Processing by UsersController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.3ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.0ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.29ms)
+Completed 200 OK in 18ms (Views: 15.2ms | ActiveRecord: 1.1ms | Allocations: 12558)
+
+
+Started GET "/lists" for 127.0.0.1 at 2022-03-06 17:28:24 +0200
+Processing by TodolistsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+  [1m[36mTodolist Load (0.3ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists"[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.94ms)
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 1.4ms | Allocations: 12141)
+
+
+Started POST "/task/new/todolist_id/2/name/eat/state/Ongoing" for ::1 at 2022-03-06 17:29:19 +0200
+Processing by TasksController#create as */*
+  Parameters: {"todolist_id"=>"2", "name"=>"eat", "state"=>"Ongoing"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTodolist Load (0.1ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTask Create (0.7ms)[0m  [1m[32mINSERT INTO "tasks" ("todolist_id", "name", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["todolist_id", 2], ["name", "eat"], ["state", "Ongoing"], ["created_at", "2022-03-06 15:29:19.660999"], ["updated_at", "2022-03-06 15:29:19.660999"]]
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+No template found for TasksController#create, rendering head :no_content
+Completed 204 No Content in 5ms (ActiveRecord: 1.4ms | Allocations: 3504)
+
+
+Started GET "/lists" for 127.0.0.1 at 2022-03-06 17:29:22 +0200
+Processing by TodolistsController#index as HTML
+  [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists"[0m
+  ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/todolists_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.68ms)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.9ms | Allocations: 5179)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-06 17:29:33 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.5ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.1ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.96ms)
+Completed 200 OK in 28ms (Views: 24.9ms | ActiveRecord: 0.9ms | Allocations: 3223)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-06 17:31:12 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.1ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.03ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.6ms | Allocations: 3193)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-06 17:34:44 +0200
+Processing by UsersController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:8:in `todolists'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.42ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.8ms | Allocations: 12857)
+
+
+  
+NoMethodError (undefined method `project' for #<Todolist:0x000000010300ce50>):
+  
+app/serializers/user_serializer.rb:17:in `block in todolists'
+app/serializers/user_serializer.rb:8:in `todolists'
+app/controllers/users_controller.rb:8:in `index'
+Started GET "/" for 127.0.0.1 at 2022-03-06 17:35:04 +0200
+Processing by UsersController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.1ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:8:in `todolists'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.05ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.8ms | Allocations: 12992)
+
+
+  
+NoMethodError (undefined method `task' for #<Todolist:0x00000001032bf008>
+Did you mean?  tasks):
+  
+app/serializers/user_serializer.rb:17:in `block in todolists'
+app/serializers/user_serializer.rb:8:in `todolists'
+app/controllers/users_controller.rb:8:in `index'
+Started GET "/" for 127.0.0.1 at 2022-03-06 17:42:28 +0200
+Processing by UsersController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.3ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.0ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.03ms)
+Completed 200 OK in 19ms (Views: 15.5ms | ActiveRecord: 1.0ms | Allocations: 19498)
+
+
+Started POST "/task/new/todolist_id/1/name/project3/state/Ongoing" for ::1 at 2022-03-06 17:43:25 +0200
+Processing by TasksController#create as */*
+  Parameters: {"todolist_id"=>"1", "name"=>"project3", "state"=>"Ongoing"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTodolist Load (0.1ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTask Create (0.8ms)[0m  [1m[32mINSERT INTO "tasks" ("todolist_id", "name", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["todolist_id", 1], ["name", "project3"], ["state", "Ongoing"], ["created_at", "2022-03-06 15:43:25.172934"], ["updated_at", "2022-03-06 15:43:25.172934"]]
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+No template found for TasksController#create, rendering head :no_content
+Completed 204 No Content in 9ms (ActiveRecord: 2.1ms | Allocations: 3505)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-06 17:43:27 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.1ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTodolist Load (0.2ms)[0m  [1m[34mSELECT "todolists".* FROM "todolists" WHERE "todolists"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."todolist_id" = ?[0m  [["todolist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.52ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.9ms | Allocations: 5702)
+
+

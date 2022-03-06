@@ -13,4 +13,10 @@ Rails.application.routes.draw do
   delete "/list/:id", to: "todolists#destroy"
   put "/list/update/:id/state/:state", to: "todolists#update"
   post "/list/new/user_id/:user_id/name/:name/description/:description", to: "todolists#create"
+
+  get "/tasks" , to: "tasks#index"
+  get "/task/:user_id/:id" , to: "tasks#show"
+  delete "/task/:id", to: "tasks#destroy"
+  put "/task/update/:id/state/:state", to: "tasks#update"
+  post "/task/new/todolist_id/:todolist_id/name/:name/state/:state", to: "tasks#create"
 end
